@@ -1,0 +1,17 @@
+# Dependencies / build artifacts
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Local environment
+.env
+.env.*
+
+# Kilocode internal state (do not commit)
+.kilo/agent-manager.json

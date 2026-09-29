@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Portfolio home">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-name">portfolio</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Software engineer</p>
+        <h1>Building backend systems and full-stack products that hold up under real load.</h1>
+        <p class="lede">
+          I design and ship APIs, data pipelines, and developer tooling — from Go services
+          to Stripe-powered storefronts. Here's a selection of work and the lessons learned.
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I'm a backend-leaning engineer who enjoys the parts of software that are
+              hardest to retrofit: data modeling, distributed state, and the interfaces
+              between services. Most of my projects are solo efforts — I design the schema,
+              write the code, and deploy it.
+            </p>
+            <p>
+              When I'm not shipping, I'm writing changelogs as source files and automating
+              the boring parts of operations.
+            </p>
+          </div>
+          <aside class="about-meta">
+            <p><span class="meta-label">Based in</span> Remote</p>
+            <p><span class="meta-label">Open to</span> Backend / full-stack roles</p>
+            <p><span class="meta-label">Stack</span> Go, Python, Java, React</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="section-sub">A few things I've built, with the problem each one solved.</p>
+        </div>
+
+        <ul class="project-list" id="project-list">
+          <!-- Project cards injected by js/projects.js -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p class="section-sub">Tools and technologies I use regularly.</p>
+        </div>
+
+        <div class="skill-groups" id="skill-groups">
+          <!-- Skill groups injected by js/skills.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <h2>Contact</h2>
+        <p>Interested in working together? Reach out.</p>
+        <ul class="contact-links">
+          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+          <li><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Your Name. Built with plain HTML, CSS, and JS.</p>
+      <a href="#top" class="back-to-top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

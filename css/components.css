@@ -1,0 +1,253 @@
+/* components.css — project cards, skills, contact, about, misc. */
+
+/* ---------- About ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-copy p {
+  margin: 0 0 1rem;
+}
+
+.about-copy p:last-child {
+  margin: 0;
+}
+
+.about-meta {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.about-meta p {
+  margin: 0 0 0.75rem;
+}
+
+.about-meta p:last-child {
+  margin: 0;
+}
+
+.meta-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.15rem;
+}
+
+/* ---------- Projects ---------- */
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.project-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-thumb img[alt$="screenshot"] {
+  min-height: 100%;
+}
+
+.project-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+.project-desc {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.project-role {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+.project-problem,
+.project-learned {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.project-problem strong,
+.project-learned strong {
+  color: var(--color-text);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: var(--color-tag-bg);
+  color: var(--color-text-muted);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  color: var(--color-text-dim);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ---------- Skills ---------- */
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-group {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.skill-group h3 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.skill-chip span {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.skill-used {
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact p {
+  color: var(--color-text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.contact-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-links a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 720px) {
+  .project-card {
+    grid-template-columns: 260px 1fr;
+    align-items: start;
+  }
+
+  .project-thumb {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

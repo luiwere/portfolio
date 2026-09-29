@@ -1,0 +1,66 @@
+[
+  {
+    "id": "Lejasmart",
+    "title": "Lejasmart",
+    "description": "A web-based expense tracking and business management platform built for local vendors who operate on paper. LejaSmart digitizes the financial record-keeping process — expenses, inventory, sales, and profit & loss — with role-based access for vendors, accountants, and business owners.",
+    "role": "Solo developer — designed, built, and deployed.",
+    "stack": ["Go","HTML", "PostgreSQL", "Docker", "WebSockets"],
+    "category": "frontend, backend",
+    "problem": "Local vendors and small business owners in informal markets rely on paper ledgers to track their finances, leading to lost records, calculation errors, and no easy way for accountants to review business data remotely.",
+    "demo": "https://digiledger-qiey.onrender.com/",
+    "repo": "https://github.com/luiwere/LejaSmart.git",
+    "screenshot": "assets/screenshots/lejasmart.png"
+  },
+  {
+    "id": "shopfront",
+    "title": "ShopFront",
+    "description": "An e-commerce storefront with product search, cart persistence, and a Stripe-powered checkout flow.",
+    "role": "Solo developer — full stack.",
+    "stack": ["Spring Boot", "React", "MySQL", "Stripe", "Docker"],
+    "category": "fullstack",
+    "problem": "A local retailer had no online presence; the store needed a catalog, cart, and checkout that worked on mobile first.",
+    "learned": "Stripe webhooks are deceptively simple until idempotency and webhook verification aren't handled — always test the failure paths.",
+    "demo": "https://shopfront.example.com",
+    "repo": "https://github.com/yourname/shopfront",
+    "screenshot": "assets/screenshots/shopfront.png"
+  },
+  {
+    "id": "pgbackup",
+    "title": "pgBackup",
+    "description": "A CLI tool that schedules encrypted, compressed PostgreSQL backups to S3 with retention policies and restore verification.",
+    "role": "Solo developer — built as a personal tool that became a team utility.",
+    "stack": ["Python", "psycopg2", "boto3", "argparse", "cryptography"],
+    "category": "backend",
+    "problem": "Manual backups were missed during release weeks, and restores were never tested until a real outage.",
+    "learned": "Automated restore verification is the only way to know a backup is real; a backup you cannot restore is a backup that does not exist.",
+    "demo": "https://pypi.org/project/pgbackup/",
+    "repo": "https://github.com/yourname/pgbackup",
+    "screenshot": "assets/screenshots/pgbackup.png"
+  },
+  {
+    "id": "pulse",
+    "title": "Pulse",
+    "description": "A personal finance dashboard that syncs bank transactions via Plaid and surfaces spending trends with Supabase.",
+    "role": "Solo developer — designed the schema, ETL, and UI.",
+    "stack": ["React", "Supabase", "Plaid", "PostgreSQL", "Tailwind CSS"],
+    "category": "fullstack",
+    "problem": "Budgeting apps buried transactions in charts; I wanted a single view of where money actually went each month.",
+    "learned": "Supabase RLS is powerful but you must model permissions in the schema, not the UI — otherwise the UI is the only thing standing between a user and everyone else's data.",
+    "demo": "https://pulse.example.com",
+    "repo": "https://github.com/yourname/pulse",
+    "screenshot": "assets/screenshots/pulse.png"
+  },
+  {
+    "id": "shiplog",
+    "title": "ShipLog",
+    "description": "A markdown-native engineering journal with auto-generated changelogs, tags, and a static site generator.",
+    "role": "Solo developer — built for personal use, open-sourced.",
+    "stack": ["Python", "Markdown", "Jinja2", "Git"],
+    "category": "tooling",
+    "problem": "Release notes lived in chat history and were impossible to find six months later.",
+    "learned": "Treating the changelog as a source file alongside the code removed the ceremony around writing it entirely.",
+    "demo": "https://shiplog.example.com",
+    "repo": "https://github.com/yourname/shiplog",
+    "screenshot": "assets/screenshots/shiplog.png"
+  }
+]

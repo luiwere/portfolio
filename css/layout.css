@@ -1,0 +1,209 @@
+/* layout.css — header, hero, sections, footer, and layout primitives. */
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand-mark {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav a {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 6rem 0 5rem;
+  text-align: center;
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 1rem;
+}
+
+.hero h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .lede {
+  margin: 0 auto 2rem;
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  max-width: 50ch;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #3d87e0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+  background: var(--color-surface);
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.back-to-top:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .primary-nav ul {
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 4rem 0 3.5rem;
+    text-align: left;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero .lede,
+  .cta-row {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+}
