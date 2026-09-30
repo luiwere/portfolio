@@ -1,30 +1,29 @@
 {
   "languages": [
-    { "name": "Go", "usedIn": "TaskFlow API" },
-    { "name": "Java", "usedIn": "ShopFront backend" },
-    { "name": "Python", "usedIn": "pgBackup, ShipLog" },
-    { "name": "JavaScript", "usedIn": "ShopFront, Pulse, site itself" },
-    { "name": "HTML/CSS", "usedIn": "this site" }
+    { "name": "Go (Golang)", "usedIn": "LejaSmart, Bitcoin Explorer" },
+    { "name": "Java", "usedIn": "Ujuzi360 LMS (Spring Boot)" },
+    { "name": "Python", "usedIn": "Data automation & scripts" },
+    { "name": "TypeScript / JavaScript", "usedIn": "LakeProof, React UI, Node" },
+    { "name": "SQL", "usedIn": "PostgreSQL, MySQL, SQLite" }
   ],
   "frameworks": [
-    { "name": "Gin", "usedIn": "TaskFlow" },
-    { "name": "Spring Boot", "usedIn": "ShopFront" },
-    { "name": "React", "usedIn": "ShopFront, Pulse" },
-    { "name": "Tailwind CSS", "usedIn": "Pulse" }
+    { "name": "Gin / Go HTTP", "usedIn": "Backend APIs & Microservices" },
+    { "name": "Spring Boot", "usedIn": "Ujuzi360 LMS Backend" },
+    { "name": "React", "usedIn": "LakeProof, Ujuzi360, Portals" },
+    { "name": "Tailwind CSS", "usedIn": "LakeProof, Web UIs" }
   ],
   "databases": [
-    { "name": "PostgreSQL", "usedIn": "TaskFlow, Pulse (Supabase)" },
-    { "name": "MySQL", "usedIn": "ShopFront" },
-    { "name": "SQLite", "usedIn": "ShipLog local store" },
-    { "name": "Supabase", "usedIn": "Pulse" }
+    { "name": "PostgreSQL", "usedIn": "LejaSmart, LakeProof, LMS" },
+    { "name": "MySQL", "usedIn": "Relational data stores" },
+    { "name": "SQLite", "usedIn": "Embedded local caches" },
+    { "name": "Supabase", "usedIn": "Realtime backend & auth" }
   ],
   "tools": [
-    { "name": "Git", "usedIn": "all projects" },
-    { "name": "Docker", "usedIn": "TaskFlow, ShopFront" },
-    { "name": "Linux", "usedIn": "all deployments" },
-    { "name": "Redis", "usedIn": "TaskFlow" },
-    { "name": "Stripe", "usedIn": "ShopFront" },
-    { "name": "Plaid", "usedIn": "Pulse" },
-    { "name": "Render / Railway", "usedIn": "TaskFlow, ShopFront" }
+    { "name": "Docker & Containers", "usedIn": "Containerization & CI" },
+    { "name": "Git & GitHub", "usedIn": "Version control & workflows" },
+    { "name": "Linux / Bash", "usedIn": "Server management & scripting" },
+    { "name": "WebSockets", "usedIn": "Real-time ledger events" },
+    { "name": "Postman / REST", "usedIn": "API testing & contracts" },
+    { "name": "Render / Vercel", "usedIn": "Cloud deployment pipelines" }
   ]
 }

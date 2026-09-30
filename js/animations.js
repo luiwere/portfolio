@@ -1,4 +1,4 @@
-/* animations.js — reveal elements on scroll via IntersectionObserver. */
+/* animations.js — smooth scroll reveals & dynamic spotlight hover */
 (function () {
   "use strict";
 
@@ -6,63 +6,62 @@
     return;
   }
 
-  var STATIC_SELECTOR = [
-    ".hero .eyebrow",
-    ".hero h1",
-    ".hero .lede",
-    ".cta-row .btn",
-    ".about-grid .about-copy > *",
-    ".about-grid .about-meta",
-    ".contact h2",
-    ".contact p",
-    ".contact-links > li",
-  ].join(", ");
-
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
   );
 
-  function observe(selector, extraClass) {
-    document.querySelectorAll(selector).forEach(function (node, index) {
+  function observeAll() {
+    var targets = document.querySelectorAll(
+      "[data-animate], .hero-content > *, .code-preview-window, .hero-highlights-grid, .about-card-main, .bento-mini-card, .contact-card-box"
+    );
+
+    targets.forEach(function (node, index) {
       node.setAttribute("data-animate", "");
-      if (extraClass) {
-        node.classList.add(extraClass);
+      if (!node.style.transitionDelay && !node.classList.contains("no-delay")) {
+        node.style.transitionDelay = (index % 5) * 0.08 + "s";
       }
-      node.style.transitionDelay = index * 0.08 + "s";
       observer.observe(node);
     });
   }
 
-  // Static content exists at first paint.
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      observe(STATIC_SELECTOR);
+  // Interactive mouse card spotlight
+  function initSpotlight() {
+    document.addEventListener("mousemove", function (e) {
+      var cards = document.querySelectorAll(".project-card, .bento-mini-card, .skill-group, .contact-item-card");
+      cards.forEach(function (card) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", x + "px");
+        card.style.setProperty("--mouse-y", y + "px");
+      });
     });
-  } else {
-    observe(STATIC_SELECTOR);
   }
 
-  // Dynamically injected project cards render after JSON loads.
-  // Project cards slide in from the side; skill groups fade up.
-  // We defer to a macrotask (setTimeout) so this runs AFTER the
-  // portfolio:ready dispatch finishes, at which point projects.js
-  // has already injected the .project-list <li> cards.
-  function onReady() {
-    setTimeout(function () {
-      observe(".project-list > li", "slide-from-side");
-      observe(".skill-group");
+  window.PORTFOLIO_ANIMATE = {
+    refresh: function () {
+      setTimeout(observeAll, 50);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      observeAll();
+      initSpotlight();
     });
+  } else {
+    observeAll();
+    initSpotlight();
   }
-  document.addEventListener("portfolio:ready", onReady);
-  if (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.projects) {
-    onReady();
-  }
+
+  document.addEventListener("portfolio:ready", function () {
+    setTimeout(observeAll, 100);
+  });
 })();
