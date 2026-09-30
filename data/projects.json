@@ -37,16 +37,16 @@
     "screenshot": "assets/screenshots/lms.png"
   },
   {
-    "id": "pulse",
-    "title": "Pulse",
-    "description": "A personal finance dashboard that syncs bank transactions via Plaid and surfaces spending trends with Supabase.",
-    "role": "Solo developer — designed the schema, ETL, and UI.",
-    "stack": ["React", "Supabase", "Plaid", "PostgreSQL", "Tailwind CSS"],
-    "category": "fullstack",
-    "problem": "Budgeting apps buried transactions in charts; I wanted a single view of where money actually went each month.",
-    "learned": "Supabase RLS is powerful but you must model permissions in the schema, not the UI — otherwise the UI is the only thing standing between a user and everyone else's data.",
-    "demo": "https://pulse.example.com",
-    "repo": "https://github.com/yourname/pulse",
-    "screenshot": "assets/screenshots/pulse.png"
+    "id": "lakeproof",
+    "title": "LakeProof",
+    "description": "The product is designed around the fixed lifecycle Catch → Landing → Transport → Processing → Market. An integrity boundary remains explicit: an intact digital chain shows that accepted stored data has not been changed later; it does not prove that the original physical claim was truthful.",
+    "role": "Backend developer — responsible for backend development.",
+    "stack": ["React", "PostgreSQL", "Typescript"],
+    "category": "backend",
+    "problem": "Small-scale fisheries depend on trustworthy records of where a catch came from, who handled it, and how it moved from landing site to buyer. In practice, that information is often fragmented across paper records, messaging threads, and disconnected systems.",
+    "learned": "On a non-techical side the different stages a fish farmer goes through to get his fish to the market. On a technical side, I learned how to build a backend system that can handle complex data relationships and ensure data integrity across multiple stages of a supply chain.",
+    "demo": "https://lake-proof.vercel.app/",
+    "repo": "https://github.com/luiwere/LakeProof.git",
+    "screenshot": "assets/screenshots/lakeproof.png"
   }
 ]
