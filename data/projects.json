@@ -12,30 +12,29 @@
     "screenshot": "assets/screenshots/lejasmart.png"
   },
   {
-    "id": "shopfront",
-    "title": "ShopFront",
-    "description": "An e-commerce storefront with product search, cart persistence, and a Stripe-powered checkout flow.",
-    "role": "Solo developer — full stack.",
-    "stack": ["Spring Boot", "React", "MySQL", "Stripe", "Docker"],
-    "category": "fullstack",
-    "problem": "A local retailer had no online presence; the store needed a catalog, cart, and checkout that worked on mobile first.",
-    "learned": "Stripe webhooks are deceptively simple until idempotency and webhook verification aren't handled — always test the failure paths.",
-    "demo": "https://shopfront.example.com",
-    "repo": "https://github.com/yourname/shopfront",
-    "screenshot": "assets/screenshots/shopfront.png"
+    "id": "bitcoin",
+    "title": "Bitcoin",
+    "description": "A lightweight Bitcoin blockchain explorer built in Go using Bitcoin Core JSON-RPC. This project was developed in a step-by-step bootcamp style, progressively building from basic RPC calls to a full blockchain inspection tool.",
+    "role": "backend.",
+    "stack": ["Go", "Bitcoin Core JSON-RPC"],
+    "category": "backend",
+    "problem": "A Lightning Bitcoin Explorer (like Mempool.space's Lightning Dashboard or 1ML) fixes the core problem statement of information asymmetry and lack of structural visibility across Bitcoin's off-chain Layer 2 network.",
+    "learned": "• The Concept: A Lightning Network relies on peer-to-peer state channels (like HTLCs). You have to keep track of a balance that changes instantly off-chain, while ensuring it can always be securely settled back on the base layer.The Career Value: This teaches you how to manage complex, concurrent application states without relying on a single, slow central database. It is the core foundation needed for building high-frequency trading systems, real-time gaming backends, or collaborative tools.",
+    "repo": "https://github.com/luiwere/BITCOIN.git",
+    "screenshot": "assets/screenshots/bitcoin.png"
   },
   {
-    "id": "pgbackup",
-    "title": "pgBackup",
-    "description": "A CLI tool that schedules encrypted, compressed PostgreSQL backups to S3 with retention policies and restore verification.",
-    "role": "Solo developer — built as a personal tool that became a team utility.",
-    "stack": ["Python", "psycopg2", "boto3", "argparse", "cryptography"],
+    "id": "lms",
+    "title": "LMS",
+    "description": "A Learning Management System (LMS) built with Java(springboot) and React, designed to facilitate online education and training. It includes features for course management, user enrollment, progress tracking, and interactive learning experiences.",
+    "role": "Backend developer — responsible for backend development.",
+    "stack": ["Java", "Spring Boot", "React"],
     "category": "backend",
-    "problem": "Manual backups were missed during release weeks, and restores were never tested until a real outage.",
-    "learned": "Automated restore verification is the only way to know a backup is real; a backup you cannot restore is a backup that does not exist.",
-    "demo": "https://pypi.org/project/pgbackup/",
-    "repo": "https://github.com/yourname/pgbackup",
-    "screenshot": "assets/screenshots/pgbackup.png"
+    "problem": "Traditional classroom learning is being replaced by online education, but there is a lack of effective tools for managing and delivering online courses.",
+    "learned": "• The Concept: An LMS is a software application that enables educators to create, manage, and deliver educational content and track student progress. • The Career Value: This project demonstrates my ability to develop full-stack applications, integrating backend services with frontend interfaces, and understanding the requirements of online education platforms.",
+    "demo": "https://ujuzi360.vercel.app/",
+    "repo": "https://github.com/Flying-Tea-Squad/lms.git",
+    "screenshot": "assets/screenshots/lms.png"
   },
   {
     "id": "pulse",
@@ -49,18 +48,5 @@
     "demo": "https://pulse.example.com",
     "repo": "https://github.com/yourname/pulse",
     "screenshot": "assets/screenshots/pulse.png"
-  },
-  {
-    "id": "shiplog",
-    "title": "ShipLog",
-    "description": "A markdown-native engineering journal with auto-generated changelogs, tags, and a static site generator.",
-    "role": "Solo developer — built for personal use, open-sourced.",
-    "stack": ["Python", "Markdown", "Jinja2", "Git"],
-    "category": "tooling",
-    "problem": "Release notes lived in chat history and were impossible to find six months later.",
-    "learned": "Treating the changelog as a source file alongside the code removed the ceremony around writing it entirely.",
-    "demo": "https://shiplog.example.com",
-    "repo": "https://github.com/yourname/shiplog",
-    "screenshot": "assets/screenshots/shiplog.png"
   }
 ]
